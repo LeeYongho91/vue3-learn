@@ -4,12 +4,14 @@
 			:model-value="firstname"
 			@update:model-value="value => $emit('update:firstname', value)"
 			label="성"
-		></LabelInput>
+		>
+		</LabelInput>
 		<LabelInput
 			:model-value="lastname"
 			@update:model-value="value => $emit('update:lastname', value)"
 			label="이름"
-		></LabelInput>
+		>
+		</LabelInput>
 	</div>
 </template>
 

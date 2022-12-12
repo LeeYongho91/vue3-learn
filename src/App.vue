@@ -27,6 +27,7 @@ export default {
 			console.log(title.value);
 			console.log(firstname.value);
 			console.log(lastname.value);
+			console.log(`test`);
 		};
 		return { title, firstname, lastname, test };
 	},
