@@ -7,6 +7,7 @@
 		<div v-if="$slots.default" class="card-body">
 			<slot :child-message="childMessage" hello-message="안녕하세요!"></slot>
 		</div>
+
 		<div v-if="hasFooter" class="card-footer text-muted">
 			<slot name="footer" footer-message="푸터 메시지"></slot>
 		</div>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import { computed } from '@vue/reactivity';
+import { computed } from 'vue';
 import { ref } from 'vue';
 
 export default {

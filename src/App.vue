@@ -1,35 +1,40 @@
 <template>
 	<div>
-		<LabelInput v-model="title" />
-		<UserName v-model:firstname="firstname" v-model:lastname="lastname" />
-		<LabelInput
-			:modelValue="username"
-			@update:modelValue="newValue => (username = newValue)"
-		/>
-		<button @click="test">클릭</button>
+		<FancyButton></FancyButton>
+		<AppCard>
+			<template #default="{ childMessage, helloMessage }"
+				>제목입니다. {{ childMessage }}{{ helloMessage }}</template
+			>
+			<!-- <template v-slot:default>내용입니다.</template>
+			<template v-slot:footer>푸터입니다.</template> -->
+		</AppCard>
+		<AppCard>
+			<template #[slotArgs]>헤더입니다.</template>
+			<template #default>안녕하세요</template>
+			<template #footer="{ footerMessage }">ㅇㅇ {{ footerMessage }}</template>
+		</AppCard>
 	</div>
 </template>
 
 <script>
+import FancyButton from '@/components/FancyButton.vue';
+import AppCard from '@/components/AppCard.vue';
 import { ref } from 'vue';
-import LabelInput from '@/components/LabelInput.vue';
-import UserName from '@/components/UserName.vue';
+
 export default {
 	components: {
-		LabelInput,
-		UserName,
+		FancyButton,
+		AppCard,
 	},
+
 	setup() {
-		const title = ref('');
-		const firstname = ref('');
-		const lastname = ref('');
-		const test = () => {
-			console.log(title.value);
-			console.log(firstname.value);
-			console.log(lastname.value);
-			console.log(`test`);
+		const sayHello = () => {
+			alert('안녕하세요');
 		};
-		return { title, firstname, lastname, test };
+
+		const slotArgs = ref('header');
+
+		return { sayHello, slotArgs };
 	},
 };
 </script>
