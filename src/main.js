@@ -4,7 +4,9 @@ import App from './App.vue';
 
 import './assets/main.css';
 
-createApp(App).mount('#app');
-import 'bootstrap/dist/css/bootstrap.min.css';
+const app = createApp(App);
 
-console.log('test');
+app.provide('app-message', 'app message 입니다.');
+app.mount('#app');
+
+import 'bootstrap/dist/css/bootstrap.min.css';

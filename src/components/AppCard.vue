@@ -1,6 +1,6 @@
 <template>
 	<div class="card">
-		<div v-if="$slots.header" class="card-header">
+		<div v-if="hasHeader" class="card-header">
 			<slot name="header" header-message="헤더 메시지"></slot>
 		</div>
 		<!-- {{$slots}} -->
@@ -22,8 +22,9 @@ export default {
 	setup(props, { slots }) {
 		const childMessage = ref('자식 컴포넌트 메시지');
 		// context.slots
+		const hasHeader = computed(() => slots.header);
 		const hasFooter = computed(() => !!slots.footer);
-		return { childMessage, hasFooter };
+		return { childMessage, hasFooter, hasHeader };
 	},
 };
 </script>

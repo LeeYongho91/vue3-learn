@@ -12,6 +12,7 @@
 import { inject } from 'vue';
 import DeepChild from './DeepChild.vue';
 export default {
+	name: 'child-component',
 	components: {
 		DeepChild,
 	},
