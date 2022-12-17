@@ -17,7 +17,7 @@ console.log('Normal Script');
 </script>
 
 <script setup>
-import { computed } from '@vue/reactivity';
+import { computed } from 'vue';
 console.log('Script Setup');
 
 const props = defineProps({

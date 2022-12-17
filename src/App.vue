@@ -1,14 +1,16 @@
 <template>
 	<div>
-		<Test />
+		<!-- <Test /> -->
+		<ScriptSetup />
 	</div>
 </template>
 
 <script>
-import Test from '@/Test.vue';
+// import Test from '@/Test.vue';
+import ScriptSetup from '@/components/ScriptSetup.vue';
 
 export default {
-	components: { Test },
+	components: { ScriptSetup },
 
 	setup() {},
 };
